@@ -1,0 +1,11 @@
+D:\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.deps.json
+D:\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.runtimeconfig.json
+D:\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.runtimeconfig.dev.json
+D:\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.dll
+D:\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.pdb
+D:\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.csprojResolveAssemblyReference.cache
+D:\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.csproj.CoreCompileInputs.cache
+D:\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.AssemblyInfoInputs.cache
+D:\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.AssemblyInfo.cs
+D:\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.dll
+D:\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.pdb
