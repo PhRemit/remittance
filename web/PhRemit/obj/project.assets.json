@@ -13125,11 +13125,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Projects\\samp\\PhRemit\\PhRemit\\PhRemit.csproj",
+      "projectUniqueName": "C:\\Projects\\PhRemit\\web\\PhRemit\\PhRemit.csproj",
       "projectName": "PhRemit",
-      "projectPath": "C:\\Projects\\samp\\PhRemit\\PhRemit\\PhRemit.csproj",
+      "projectPath": "C:\\Projects\\PhRemit\\web\\PhRemit\\PhRemit.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\samp\\PhRemit\\PhRemit\\obj\\",
+      "outputPath": "C:\\Projects\\PhRemit\\web\\PhRemit\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

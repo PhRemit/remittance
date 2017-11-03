@@ -10,3 +10,15 @@ C:\Projects\samp\PhRemit\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.AssemblyInfoInp
 C:\Projects\samp\PhRemit\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.AssemblyInfo.cs
 C:\Projects\samp\PhRemit\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.dll
 C:\Projects\samp\PhRemit\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.pdb
+C:\Projects\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.deps.json
+C:\Projects\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.runtimeconfig.json
+C:\Projects\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.runtimeconfig.dev.json
+C:\Projects\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.dll
+C:\Projects\PhRemit\web\PhRemit\bin\Debug\netcoreapp2.0\PhRemit.pdb
+C:\Projects\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.csprojResolveAssemblyReference.cache
+C:\Projects\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.csproj.CoreCompileInputs.cache
+C:\Projects\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Projects\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.AssemblyInfoInputs.cache
+C:\Projects\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.AssemblyInfo.cs
+C:\Projects\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.dll
+C:\Projects\PhRemit\web\PhRemit\obj\Debug\netcoreapp2.0\PhRemit.pdb

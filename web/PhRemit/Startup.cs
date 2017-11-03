@@ -36,6 +36,12 @@ namespace PhRemit
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = "368363710252331";
+                facebookOptions.AppSecret = "b188dc6154caf8ac3c2a96ca38cf93a2";
+            });
+
             services.AddMvc();
         }
 
