@@ -10,11 +10,17 @@ namespace PhRemit.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<State> State { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<CivilStatus> CivilStatus { get; set; }
+        public virtual DbSet<Nationality> Nationality { get; set; }
+        public virtual DbSet<IdentificationType> IdentificationType { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
-        {
-        }
-
+        {}
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

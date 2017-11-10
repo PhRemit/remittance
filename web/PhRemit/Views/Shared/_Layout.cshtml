@@ -8,6 +8,7 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -31,6 +32,20 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Maintenance
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Countries" asp-action="">Country</a></li>
+                            <li><a asp-area="" asp-controller="States" asp-action="">State</a></li>
+                            <li><a asp-area="" asp-controller="Cities" asp-action="">City</a></li>
+                            <li><a asp-area="" asp-controller="IdentificationTypes" asp-action="">ID Types</a></li>
+                            <li><a asp-area="" asp-controller="Nationalities" asp-action="">Nationality</a></li>
+                            <li><a asp-area="" asp-controller="CivilStatus" asp-action="">Civil Status</a></li>
+                        </ul>
+                    </li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
@@ -50,6 +65,7 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"

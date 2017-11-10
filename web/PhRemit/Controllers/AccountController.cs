@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using PhRemit.Models;
 using PhRemit.Models.AccountViewModels;
 using PhRemit.Services;
+using PhRemit.Data;
 
 namespace PhRemit.Controllers
 {
@@ -24,17 +25,20 @@ namespace PhRemit.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+        private readonly ApplicationDbContext _context;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            _context = context;
         }
 
         [TempData]
@@ -208,6 +212,7 @@ namespace PhRemit.Controllers
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
         {
+            PopulateDropDownList();
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -220,7 +225,10 @@ namespace PhRemit.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, MiddleName = model.MiddleName,
+                    LastName = model.LastName, PhoneNumber = model.PhoneNumber, CountryId = model.CountryId, StateId = model.StateId, CityId = model.CityId,
+                    CivilStatusId = model.CivilStatusId, NationalityId = model.NationalityId, IdentificationTypeId = model.IdentificationTypeId, ResidentialAddress = model.ResidentialAddress,
+                    BirthDate = model.BirthDate, SecondaryEmail = model.SecondaryEmail, IdentificationNumber = model.IdentificationNumber, ExpirationDate = model.ExpirationDate};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -238,7 +246,31 @@ namespace PhRemit.Controllers
             }
 
             // If we got this far, something failed, redisplay form
+            PopulateDropDownList(model.CountryId, model.StateId, model.CityId, model.NationalityId, model.CivilStatusId, model.IdentificationTypeId);
             return View(model);
+        }
+
+        private void PopulateDropDownList(object selectedCountry = null, object selectedState = null,
+            object selectedCity = null, object selectedNationality = null, object selectedCivilStatus = null,
+            object selectedIDType = null)
+        {
+            var countryQuery = from c in _context.Country orderby c.Name select c;
+            ViewBag.CountryId = new SelectList(countryQuery, "Id", "Name", selectedCountry);
+
+            var stateQuery = from c in _context.State orderby c.Name select c;
+            ViewBag.StateId = new SelectList(stateQuery, "Id", "Name", selectedState);
+
+            var cityQuery = from c in _context.City orderby c.Name select c;
+            ViewBag.CityId = new SelectList(cityQuery, "Id", "Name", selectedCity);
+
+            var nationalityQuery = from c in _context.Nationality orderby c.Name select c;
+            ViewBag.NationalityId = new SelectList(nationalityQuery, "Id", "Name", selectedNationality);
+
+            var civilstatusQuery = from c in _context.CivilStatus orderby c.Name select c;
+            ViewBag.CivilStatusId = new SelectList(civilstatusQuery, "Id", "Name", selectedCivilStatus);
+
+            var idtypeQuery = from c in _context.IdentificationType orderby c.Name select c;
+            ViewBag.IdentificationTypeId = new SelectList(idtypeQuery, "Id", "Name", selectedIDType);
         }
 
         [HttpPost]
@@ -436,6 +468,7 @@ namespace PhRemit.Controllers
         {
             return View();
         }
+
 
         #region Helpers
 
