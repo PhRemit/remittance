@@ -16,6 +16,8 @@ namespace PhRemit.Models
         [Required]
         public string Name { get; set; }
 
+        [Required]
+        [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
 
         [Required]

@@ -33,9 +33,12 @@
                         <span asp-validation-for="LastName" class="text-danger"></span>
                     </div>
                 </div>
+
                 <div class="col-sm-12">
                     <p class="text-warning">IMPORTANT: Please type in your full name AS SHOWN ON YOUR VALID ID. If the name on your ID does not match the information you type in here, you might have difficulty collecting your remittance/s.</p>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label asp-for="Email"></label>
@@ -50,6 +53,8 @@
                         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label asp-for="Password"></label>
@@ -64,6 +69,8 @@
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label asp-for="ResidentialAddress"></label>
@@ -71,40 +78,49 @@
                         <span asp-validation-for="ResidentialAddress" class="text-danger"></span>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label asp-for="Country"></label>
-                        @Html.DropDownList("CountryId", null, htmlAttributes: new { @class = "form-control" })
+                        <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
+                        @*@Html.DropDownList("CountryId", null, htmlAttributes: new { @class = "form-control" })*@
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label asp-for="State"></label>
-                        @Html.DropDownList("StateId", null, htmlAttributes: new { @class = "form-control" })
+                        <select asp-for="StateId" class="form-control" asp-items="ViewBag.StateId"></select>
+                        @*@Html.DropDownList("StateId", null, htmlAttributes: new { @class = "form-control" })*@
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label asp-for="City"></label>
-                        @Html.DropDownList("CityId", null, htmlAttributes: new { @class = "form-control" })
+                        <select asp-for="CityId" class="form-control" asp-items="ViewBag.CityId"></select>
+                        @*@Html.DropDownList("CityId", null, htmlAttributes: new { @class = "form-control" })*@
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label>Postal Code</label>
-                        <input class="form-control" value=""/>
+                        <input asp-for="ResidentialAddress" class="form-control" />
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label asp-for="Nationality"></label>
-                        @Html.DropDownList("NationalityId", null, htmlAttributes: new { @class = "form-control" })
+                        <select asp-for="NationalityId" class="form-control" asp-items="ViewBag.NationalityId"></select>
+                        @*@Html.DropDownList("NationalityId", null, htmlAttributes: new { @class = "form-control" })*@
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label asp-for="CivilStatus"></label>
-                        @Html.DropDownList("CivilStatusId", null, htmlAttributes: new { @class = "form-control" })
+                        <select asp-for="CivilStatusId" class="form-control" asp-items="ViewBag.CivilStatusId"></select>
+                        @*@Html.DropDownList("CivilStatusId", null, htmlAttributes: new { @class = "form-control" })*@
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -124,10 +140,13 @@
                         <span asp-validation-for="SecondaryEmail" class="text-danger"></span>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label asp-for="IdentificationType"></label>
-                        @Html.DropDownList("IdentificationTypeId", null, htmlAttributes: new { @class = "form-control" })
+                        <select asp-for="IdentificationTypeId" class="form-control" asp-items="ViewBag.IdentificationTypeId"></select>
+                        @*@Html.DropDownList("IdentificationTypeId", null, htmlAttributes: new { @class = "form-control" })*@
                     </div>
                 </div>
                 <div class="col-sm-3">

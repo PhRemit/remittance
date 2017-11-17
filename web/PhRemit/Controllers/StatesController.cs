@@ -20,18 +20,10 @@ namespace PhRemit.Controllers
         }
 
         // GET: States
-        public async Task<IActionResult> Index(int? SelectedCountry)
+        public async Task<IActionResult> Index()
         {
-            var countries = _context.Country.OrderBy(q => q.Name).ToList();
-            ViewBag.SelectedCountry = new SelectList(countries, "CountryId", "Name", SelectedCountry);
-            int countryId = SelectedCountry.GetValueOrDefault();
-
-            IQueryable<State> states = _context.State
-                .Where(c => !SelectedCountry.HasValue || c.CountryId == countryId)
-                .OrderBy(d => d.CountryId)
-                .Include(d => d.Country);
-            var sql = states.ToString();
-            return View(await _context.State.ToListAsync());
+            var applicationDbContext = _context.State.Include(s => s.Country);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: States/Details/5
@@ -43,6 +35,7 @@ namespace PhRemit.Controllers
             }
 
             var state = await _context.State
+                .Include(s => s.Country)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (state == null)
             {
@@ -66,6 +59,15 @@ namespace PhRemit.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Code,Name,Active,CountryId")] State state)
         {
+            if (_context.State.Any(e => e.Code == state.Code))
+            {
+                ModelState.AddModelError("Code", "Code already exists.");
+            }
+            if (_context.State.Any(e => e.Name == state.Name))
+            {
+                ModelState.AddModelError("Name", "Name already exists.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(state);
@@ -106,6 +108,15 @@ namespace PhRemit.Controllers
                 return NotFound();
             }
 
+            if (_context.State.Any(e => e.Code == state.Code && e.Id != state.Id))
+            {
+                ModelState.AddModelError("Code", "Code already exists.");
+            }
+            if (_context.State.Any(e => e.Name == state.Name && e.Id != state.Id))
+            {
+                ModelState.AddModelError("Name", "Name already exists.");
+            }
+
             if (ModelState.IsValid)
             {
                 try
@@ -139,6 +150,7 @@ namespace PhRemit.Controllers
             }
 
             var state = await _context.State
+                .Include(s => s.Country)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (state == null)
             {

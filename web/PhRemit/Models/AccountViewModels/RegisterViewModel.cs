@@ -46,9 +46,11 @@ namespace PhRemit.Models.AccountViewModels
         [Display(Name = "Secondary Email")]
         public string SecondaryEmail { get; set; }
 
+        [Required]
         [Display(Name = "ID Number")]
         public string IdentificationNumber { get; set; }
 
+        [Required]
         [Display(Name = "Expiration")]
         public DateTime ExpirationDate { get; set; }
 
@@ -56,6 +58,7 @@ namespace PhRemit.Models.AccountViewModels
         public string PromoCode { get; set; }
 
         [Phone]
+        [Required]
         [Display(Name = "Australian mobile number")]
         public string PhoneNumber { get; set; }
 

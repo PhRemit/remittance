@@ -56,6 +56,15 @@ namespace PhRemit.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Code,Name,Active")] CivilStatus civilStatus)
         {
+            if (_context.CivilStatus.Any(e => e.Code == civilStatus.Code))
+            {
+                ModelState.AddModelError("Code", "Code already exists.");
+            }
+            if (_context.CivilStatus.Any(e => e.Name == civilStatus.Name))
+            {
+                ModelState.AddModelError("Name", "Name already exists.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(civilStatus);
@@ -91,6 +100,15 @@ namespace PhRemit.Controllers
             if (id != civilStatus.Id)
             {
                 return NotFound();
+            }
+
+            if (_context.CivilStatus.Any(e => e.Code == civilStatus.Code && e.Id != civilStatus.Id))
+            {
+                ModelState.AddModelError("Code", "Code already exists.");
+            }
+            if (_context.CivilStatus.Any(e => e.Name == civilStatus.Name && e.Id != civilStatus.Id))
+            {
+                ModelState.AddModelError("Name", "Name already exists.");
             }
 
             if (ModelState.IsValid)

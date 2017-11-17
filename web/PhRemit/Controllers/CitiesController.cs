@@ -22,17 +22,8 @@ namespace PhRemit.Controllers
         // GET: Cities
         public async Task<IActionResult> Index(int? SelectedState)
         {
-            var states = _context.State.OrderBy(q => q.Name).ToList();
-            ViewBag.SelectedState = new SelectList(states, "CountryId", "Name", SelectedState);
-            int stateId = SelectedState.GetValueOrDefault();
-
-            IQueryable<City> cities = _context.City
-                .Where(c => !SelectedState.HasValue || c.StateId == stateId)
-                .OrderBy(d => d.StateId)
-                .Include(d => d.State);
-            var sql = states.ToString();
-
-            return View(await _context.City.ToListAsync());
+            var applicationDbContext = _context.City.Include(s => s.State);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Cities/Details/5
@@ -44,6 +35,7 @@ namespace PhRemit.Controllers
             }
 
             var city = await _context.City
+                .Include(e => e.State)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (city == null)
             {
@@ -67,6 +59,18 @@ namespace PhRemit.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Code,Name,PostalCode,Active,StateId")] City city)
         {
+            if (_context.City.Any(e => e.Code == city.Code))
+            {
+                ModelState.AddModelError("Code", "Code already exists.");
+            }
+            if (_context.City.Any(e => e.Name == city.Name))
+            {
+                ModelState.AddModelError("Name", "Name already exists.");
+            }
+            if (_context.City.Any(e => e.PostalCode == city.PostalCode))
+            {
+                ModelState.AddModelError("PostalCode", "Postal Code already exists.");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(city);
@@ -106,6 +110,19 @@ namespace PhRemit.Controllers
                 return NotFound();
             }
 
+            if (_context.City.Any(e => e.Code == city.Code && e.Id != city.Id))
+            {
+                ModelState.AddModelError("Code", "Code already exists.");
+            }
+            if (_context.City.Any(e => e.Name == city.Name && e.Id != city.Id))
+            {
+                ModelState.AddModelError("Name", "Name already exists.");
+            }
+            if (_context.City.Any(e => e.PostalCode == city.PostalCode && e.Id != city.Id))
+            {
+                ModelState.AddModelError("PostalCode", "Postal Code already exists.");
+            }
+
             if (ModelState.IsValid)
             {
                 try
@@ -139,6 +156,7 @@ namespace PhRemit.Controllers
             }
 
             var city = await _context.City
+                .Include(s => s.State)
                 .SingleOrDefaultAsync(m => m.Id == id);
             if (city == null)
             {
