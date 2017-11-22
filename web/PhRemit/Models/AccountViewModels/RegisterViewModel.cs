@@ -59,7 +59,7 @@ namespace PhRemit.Models.AccountViewModels
 
         [Phone]
         [Required]
-        [Display(Name = "Australian mobile number")]
+        [Display(Name = "Mobile Number (Australia)")]
         public string PhoneNumber { get; set; }
 
         public int CountryId { get; set; }
