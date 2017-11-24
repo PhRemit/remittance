@@ -1,8 +1,16 @@
-﻿body {
+﻿html {
+    min-height: 100%;
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin-bottom: 100px;
 }
-
+hr {
+    border-color: #F05F40;
+    border-width: 3px;
+    max-width: 50px;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -31,5 +39,179 @@
     /* Hide captions */
     .carousel-caption {
         display: none;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 100px;
+    background-color: #333333;
+    color: #ffffff;
+    padding-top: 10px;
+}
+
+@media (min-width: 992px) {
+    body {
+        margin-bottom: 60px;
+    }
+
+    .footer {
+        height: 60px;
+    }
+}
+
+.text-footer {
+    color: gray;
+    padding-left: 10px;
+}
+a.text-footer:hover,
+a.text-footer:focus {
+    color: darkorange;
+}
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: inherit;
+    background-color: #ffeddb;
+    background-image: url("../images/OrangeWallpaper.png");
+}
+    .jumbotron > hr {
+        border-top-color: darkorange;
+    }
+
+    .jumbotron h1,
+    .jumbotron .h1 {
+        color: white;
+    }
+
+    .jumbotron p {
+        margin-bottom: 15px;
+        font-size: 23px;
+        font-weight: 200;
+        color: white;
+    }
+
+/*--=============================================--*/
+.jumbotron1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: inherit;
+    background-color: white;
+}
+
+    .jumbotron1 h1,
+    .jumbotron1 .h1 {
+        color: inherit;
+    }
+
+    .jumbotron1 p {
+        margin-bottom: 15px;
+        font-size: 23px;
+        font-weight: 200;
+    }
+
+    .jumbotron1 > hr {
+        border-top-color: darkorange;
+    }
+
+.container .jumbotron1,
+.container-fluid .jumbotron1 {
+    border-radius: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.jumbotron1 .container {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron1 {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .container .jumbotron1,
+    .container-fluid .jumbotron1 {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .jumbotron1 h1,
+    .jumbotron1 .h1 {
+        font-size: 68px;
+    }
+}
+/*--=============================================--*/
+.jumbotron2 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: inherit;
+    background-color: #ffeddb;
+}
+
+    .jumbotron2 h1,
+    .jumbotron2 .h1 {
+        color: inherit;
+    }
+
+    .jumbotron2 p {
+        margin-bottom: 15px;
+        font-size: 23px;
+        font-weight: 200;
+    }
+
+    .jumbotron2 > hr {
+        border-top-color: darkorange;
+    }
+
+.container .jumbotron2,
+.container-fluid .jumbotron2 {
+    border-radius: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.jumbotron2 .container {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron2 {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .container .jumbotron2,
+    .container-fluid .jumbotron2 {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .jumbotron2 h1,
+    .jumbotron2 .h1 {
+        font-size: 68px;
+    }
+}
+
+.text-color-white {
+    color: white;
+}
+.text-color-orange {
+    color: darkorange;
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
     }
 }

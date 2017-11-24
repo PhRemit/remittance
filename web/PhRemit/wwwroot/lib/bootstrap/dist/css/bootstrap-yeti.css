@@ -4501,11 +4501,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: #222222;
 }
 .navbar-default .navbar-brand {
-  color: #ffffff;
+  color: darkorange;
+  font-weight:500;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffffff;
+  color: darkorange;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
@@ -4516,7 +4517,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: darkorange;
   background-color: #272727;
 }
 .navbar-default .navbar-nav > .active > a,
@@ -4549,7 +4550,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: #272727;
-  color: #ffffff;
+  color: darkorange;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -4557,7 +4558,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffffff;
+    color: darkorange;
     background-color: #272727;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
@@ -6808,6 +6809,7 @@ button.close {
 .navbar-default .dropdown-menu > .active > a,
 .navbar-default .dropdown-menu > .active > a:hover {
   background-color: #272727;
+  color: darkorange;
 }
 .navbar-inverse .dropdown-menu {
   background-color: #008cba;
