@@ -1,10 +1,11 @@
 ﻿html {
     min-height: 100%;
+    height: 100%;
 }
 body {
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 20px;
-    margin-bottom: 100px;
+    height: 100%;
 }
 hr {
     border-color: #F05F40;
@@ -16,6 +17,9 @@ hr {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    min-height: 100%;
+    margin-bottom: -100px;
+    padding-bottom: 100px;
 }
 
 /* Carousel */
@@ -42,23 +46,17 @@ hr {
     }
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
+footer {
     height: 100px;
     background-color: #333333;
     color: #ffffff;
-    padding-top: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
 }
 
 @media (min-width: 992px) {
-    body {
-        margin-bottom: 60px;
-    }
 
-    .footer {
+    footer {
         height: 60px;
     }
 }
@@ -150,7 +148,7 @@ a.text-footer:focus {
     padding-top: 30px;
     padding-bottom: 30px;
     color: inherit;
-    background-color: #ffeddb;
+    background-color: #f4f4f4;
 }
 
     .jumbotron2 h1,
