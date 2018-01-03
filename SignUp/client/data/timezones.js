@@ -1,0 +1,20 @@
+export default {
+  "(GMT+11:00) Kosrae": "Pacific/Kosrae",
+  "(GMT+11:00) Norfolk": "Pacific/Norfolk",
+  "(GMT+11:00) Noumea": "Pacific/Noumea",
+  "(GMT+11:00) Ponape": "Pacific/Ponape",
+  "(GMT+13:00) Aukland": "Pacific/Aukland",
+  "(GMT+13:00) Fiji": "Pacific/Fiji",
+  "(GMT+12:00) Funafuti": "Pacific/Funafuti",
+  "(GMT+12:00) Kwajalein": "Pacific/Kwajalein",
+  "(GMT+12:00) Majuro": "Pacific/Majuro",
+  "(GMT+12:00) Nauru": "Pacific/Nauru",
+  "(GMT+12:00) Tarawa": "Pacific/Tarawa",
+  "(GMT+12:00) Wake": "Pacific/Wake",
+  "(GMT+12:00) Wallis": "Pacific/Wallis",
+  "(GMT+14:00) Apia": "Pacific/Apia",
+  "(GMT+13:00) Enderbury": "Pacific/Enderbury",
+  "(GMT+13:00) Fakaofo": "Pacific/Fakaofo",
+  "(GMT+13:00) Tongatapu": "Pacific/Tongatapu",
+  "(GMT+14:00) Kiritimati": "Pacific/Kiritimati"
+}
